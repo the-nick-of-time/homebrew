@@ -1,0 +1,399 @@
+diff --git packages/BUILD.bazel packages/BUILD.bazel
+index 595230b..444f227 100644
+--- packages/BUILD.bazel
++++ packages/BUILD.bazel
+@@ -110,6 +110,24 @@ latex_package(
+     ],
+ )
+ 
++latex_package(
++    name = "bookman",
++    srcs = [
++        "@texlive_texmf__texmf-dist__tex__latex__bookman",
++        "@texlive_texmf__texmf-dist__tex__latex__psnfss",
++        "@texlive_texmf__texmf-dist__dvips__bookman",
++        "@texlive_texmf__texmf-dist__tex4ht__ht-fonts__alias__adobe__bookman",
++        "@texlive_texmf__texmf-dist__fonts__afm__adobe__bookman",
++        "@texlive_texmf__texmf-dist__fonts__afm__urw__bookman",
++        "@texlive_texmf__texmf-dist__fonts__map__dvips__bookman",
++        "@texlive_texmf__texmf-dist__fonts__tfm__adobe__bookman",
++        "@texlive_texmf__texmf-dist__fonts__tfm__urw35vf__bookman",
++        "@texlive_texmf__texmf-dist__fonts__type1__urw__bookman",
++        "@texlive_texmf__texmf-dist__fonts__vf__adobe__bookman",
++        "@texlive_texmf__texmf-dist__fonts__vf__urw35vf__bookman",
++    ]
++)
++
+ latex_package(
+     name = "booktabs",
+     srcs = ["@texlive_texmf__texmf-dist__tex__latex__booktabs"],
+@@ -137,6 +155,11 @@ latex_package(
+     tests = ["caption_test.tex"],
+ )
+ 
++latex_package(
++    name = "cfr-initials",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__cfr-initials"]
++)
++
+ latex_package(
+     name = "cleveref",
+     srcs = ["@texlive_texmf__texmf-dist__tex__latex__cleveref"],
+@@ -165,6 +188,11 @@ latex_package(
+     tests = ["colortbl_test.tex"],
+ )
+ 
++latex_package(
++    name = "contour",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__contour"]
++)
++
+ latex_package(
+     name = "csquotes",
+     srcs = [
+@@ -358,6 +386,11 @@ latex_package(
+     tests = ["fontawesome_test.tex"],
+ )
+ 
++latex_package(
++    name = "fontaxes",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__fontaxes"]
++)
++
+ latex_package(
+     name = "fontspec",
+     srcs = [
+@@ -367,6 +400,11 @@ latex_package(
+     tests = ["fontspec_test.tex"],
+ )
+ 
++latex_package(
++    name = "footmisc",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__footmisc"]
++)
++
+ latex_package(
+     name = "fp",
+     srcs = ["@texlive_texmf__texmf-dist__tex__latex__fp"],
+@@ -402,6 +440,19 @@ latex_package(
+     tests = ["geometry_test.tex"],
+ )
+ 
++latex_package(
++    name = "gillius",
++    srcs = [
++        "@texlive_texmf__texmf-dist__tex__latex__gillius",
++        "@texlive_texmf__texmf-dist__fonts__tfm__arkandis__gillius",
++        "@texlive_texmf__texmf-dist__fonts__enc__dvips__gillius",
++        "@texlive_texmf__texmf-dist__fonts__map__dvips__gillius",
++        "@texlive_texmf__texmf-dist__fonts__opentype__arkandis__gillius",
++        "@texlive_texmf__texmf-dist__fonts__type1__arkandis__gillius",
++        "@texlive_texmf__texmf-dist__fonts__vf__arkandis__gillius",
++    ]
++)
++
+ latex_package(
+     name = "gincltex",
+     srcs = [
+@@ -454,6 +505,11 @@ latex_package(
+     tests = ["graphicx_test.tex"],
+ )
+ 
++latex_package(
++    name = "hang",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__hang"]
++)
++
+ latex_package(
+     name = "hanging",
+     srcs = ["@texlive_texmf__texmf-dist__tex__latex__hanging"],
+@@ -531,12 +587,38 @@ latex_package(
+     tests = ["import_test.tex"],
+ )
+ 
++latex_package(
++    name = "initials",
++    srcs = [
++        "@texlive_texmf__texmf-dist__tex__latex__initials",
++        "@texlive_texmf__texmf-dist__fonts__type1__public__initials",
++        "@texlive_texmf__texmf-dist__fonts__tfm__public__initials",
++        "@texlive_texmf__texmf-dist__fonts__afm__public__initials",
++        "@texlive_texmf__texmf-dist__fonts__map__dvips__initials",
++    ]
++)
++
+ latex_package(
+     name = "keyval",
+     srcs = [":graphics_oberdiek"],
+     tests = ["keyval_test.tex"],
+ )
+ 
++latex_package(
++    name = "koma-script",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__koma-script"],
++)
++
++latex_package(
++    name = "kpfonts",
++    srcs = [
++        "@texlive_texmf__texmf-dist__tex__latex__kpfonts",
++        "@texlive_texmf__texmf-dist__fonts__tfm__public__kpfonts",
++        "@texlive_texmf__texmf-dist__fonts__type1__public__kpfonts",
++        "@texlive_texmf__texmf-dist__fonts__vf__public__kpfonts",
++    ]
++)
++
+ latex_package(
+     name = "kvoptions",
+     srcs = [":graphics_oberdiek"],
+@@ -549,6 +631,16 @@ latex_package(
+     tests = ["lastpage_test.tex"],
+ )
+ 
++latex_package(
++    name = "lettrine",
++    srcs = [
++        ":keyval",
++        ":minifp",
++        "@texlive_texmf__texmf-dist__tex__latex__lettrine",
++    ],
++    tests = ["lettrine_test.tex"],
++)
++
+ latex_package(
+     name = "lineno",
+     srcs = ["@texlive_texmf__texmf-dist__tex__latex__lineno"],
+@@ -564,6 +656,11 @@ latex_package(
+     tests = ["l3keys2e_test.tex"],
+ )
+ 
++# latex_package(
++#     name = "l3packages",
++#     srcs = ["@texlive_texmf__texmf-dist__tex__latex__l3packages"]
++# )
++
+ latex_package(
+     name = "listings",
+     srcs = [
+@@ -635,6 +732,17 @@ latex_package(
+     tests = ["mfirstuc_test.tex"],
+ )
+ 
++latex_package(
++    name = "mflogo",
++    srcs = [
++        "@texlive_texmf__texmf-dist__fonts__afm__hoekwater__mflogo-font",
++        "@texlive_texmf__texmf-dist__fonts__tfm__public__mflogo",
++        "@texlive_texmf__texmf-dist__fonts__type1__hoekwater__mflogo-font",
++        "@texlive_texmf__texmf-dist__tex__latex__mflogo",
++    ],
++    tests = ["mflogo_test.tex"],
++)
++
+ latex_package(
+     name = "microtype",
+     srcs = [
+@@ -644,6 +752,14 @@ latex_package(
+     tests = ["microtype_test.tex"],
+ )
+ 
++latex_package(
++    name = "minifp",
++    srcs = [
++        "@texlive_texmf__texmf-dist__tex__generic__minifp",
++    ],
++    tests = ["minifp_test.tex"],
++)
++
+ latex_package(
+     name = "mnsymbol",
+     srcs = [
+@@ -690,6 +806,11 @@ latex_package(
+     tests = ["nth_test.tex"],
+ )
+ 
++latex_package(
++    name = "numprint",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__numprint"]
++)
++
+ latex_package(
+     name = "parskip",
+     srcs = [
+@@ -741,6 +862,12 @@ latex_package(
+     tests = ["placeins_test.tex"],
+ )
+ 
++latex_package(
++    name = "ragged2e",
++    # ragged2e got split into its own package in 2020, it was part of ms until then
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__ms"]
++)
++
+ latex_package(
+     name = "silence",
+     srcs = ["@texlive_texmf__texmf-dist__tex__latex__silence"],
+@@ -816,12 +943,26 @@ latex_package(
+     tests = ["svn-prov_test.tex"],
+ )
+ 
++latex_package(
++    name = "tablefootnote",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__tablefootnote"]
++)
++
+ latex_package(
+     name = "tabularx",
+     srcs = [":tools"],
+     tests = ["tabularx_test.tex"],
+ )
+ 
++latex_package(
++    name = "tabulary",
++    srcs = [
++        ":array",
++        "@texlive_texmf__texmf-dist__tex__latex__tabulary",
++    ],
++    tests = ["tabulary_test.tex"],
++)
++
+ latex_package(
+     name = "tcolorbox",
+     srcs = [
+@@ -834,6 +975,11 @@ latex_package(
+     tests = ["tcolorbox_test.tex"],
+ )
+ 
++latex_package(
++    name = "tex-gyre",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__tex-gyre"]
++)
++
+ latex_package(
+     name = "textcase",
+     srcs = ["@texlive_texmf__texmf-dist__tex__latex__textcase"],
+@@ -865,6 +1011,16 @@ latex_package(
+     tests = ["tikz-qtree_test.tex"],
+ )
+ 
++latex_package(
++    name = "tipa",
++    srcs = [
++        "@texlive_texmf__texmf-dist__tex__latex__tipa",
++        "@texlive_texmf__texmf-dist__fonts__map__dvips__tipa",
++        "@texlive_texmf__texmf-dist__fonts__tfm__public__tipa",
++        "@texlive_texmf__texmf-dist__fonts__type1__public__tipa",
++    ]
++)
++
+ latex_package(
+     name = "titlesec",
+     srcs = ["@texlive_texmf__texmf-dist__tex__latex__titlesec"],
+@@ -921,11 +1077,20 @@ latex_package(
+         "@texlive_texmf__texmf-dist__tex__latex__filehook",
+         "@texlive_texmf__texmf-dist__tex__latex__l3packages__l3keys2e",
+         "@texlive_texmf__texmf-dist__tex__latex__unicode-math",
+-        "@texlive_texmf__texmf-dist__tex__lualatex__lualatex-math"
++        "@texlive_texmf__texmf-dist__tex__lualatex__lualatex-math",
+     ],
+     tests = ["unicode-math_test.tex"],
+ )
+ 
++latex_package(
++    name = "units",
++    srcs = [
++        ":ifthen",
++        "@texlive_texmf__texmf-dist__tex__latex__units",
++    ],
++    tests = ["units_test.tex"],
++)
++
+ latex_package(
+     name = "upquote",
+     srcs = ["@texlive_texmf__texmf-dist__tex__latex__upquote"],
+@@ -944,6 +1109,11 @@ latex_package(
+     tests = ["verbatim_test.tex"],
+ )
+ 
++latex_package(
++    name = "wrapfig",
++    srcs = ["@texlive_texmf__texmf-dist__tex__latex__wrapfig"]
++)
++
+ latex_package(
+     name = "xcharter",
+     srcs = [
+diff --git packages/lettrine_test.tex packages/lettrine_test.tex
+new file mode 100644
+index 0000000..b74cf1c
+--- /dev/null
++++ packages/lettrine_test.tex
+@@ -0,0 +1,8 @@
++\documentclass{report}
++\usepackage{lettrine}
++\begin{document}
++    \lettrine[lraise=0.1, nindent=0em, slope=-.5em]{T}{his} is an example.
++    With a long enough text, the first letter should be dropped on the second
++    line as well.
++    The third line, on the other hand, should not be impacted at all.
++\end{document}
+diff --git packages/mflogo_test.tex packages/mflogo_test.tex
+new file mode 100644
+index 0000000..7388659
+--- /dev/null
++++ packages/mflogo_test.tex
+@@ -0,0 +1,6 @@
++\documentclass{report}
++\usepackage{mflogo}
++\begin{document}
++    This is a piece of text that uses mflogo.
++    \MP
++\end{document}
+diff --git packages/minifp_test.tex packages/minifp_test.tex
+new file mode 100644
+index 0000000..b48105c
+--- /dev/null
++++ packages/minifp_test.tex
+@@ -0,0 +1,6 @@
++\documentclass{report}
++\usepackage{minifp}
++\begin{document}
++    \MFPadd{1.2}{3.4}\X
++    \X
++\end{document}
+diff --git packages/tabulary_test.tex packages/tabulary_test.tex
+new file mode 100644
+index 0000000..e64b1c6
+--- /dev/null
++++ packages/tabulary_test.tex
+@@ -0,0 +1,7 @@
++\documentclass{report}
++\usepackage{tabulary}
++\begin{document}
++    \begin{tabulary}{1.0\textwidth}{|p{.3\textwidth}|p{.7\textwidth}|}
++        a & b\\
++    \end{tabulary}
++\end{document}
+diff --git packages/units_test.tex packages/units_test.tex
+new file mode 100644
+index 0000000..43f8a9d
+--- /dev/null
++++ packages/units_test.tex
+@@ -0,0 +1,5 @@
++\documentclass{report}
++\usepackage{units}
++\begin{document}
++    \unitfrac[1]{2}{3}{m}
++\end{document}
+diff --git run_lualatex.py run_lualatex.py
+index c8ccf62..7117b5f 100644
+--- run_lualatex.py
++++ run_lualatex.py
+@@ -54,6 +54,7 @@ env["TEXMF"] = os.path.abspath("texmf/texmf-dist")
+ env["TEXMFCNF"] = os.path.abspath("texmf/texmf-dist/web2c")
+ env["TEXMFROOT"] = os.path.abspath("texmf")
+ env["TTFONTS"] = ":".join(texinputs)
++env["max_print_line"] = "480"
+ 
+ os.mkdir("bin")
+ shutil.copy(kpsewhich_file, "bin/kpsewhich")

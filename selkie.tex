@@ -1,0 +1,79 @@
+\section{Selkie}
+Like all shapechanger and hybrid species, they were created by magical means since the Awakening.
+They were sourced from the humans of northwestern Jörðin where the cold currents leave the land arid and require the people to live off the sea.
+The initial population was able to procreate and has maintained a stable population on Jörðin but have also taken to Kiyansi since contact.
+
+Selkies have large eyes, with very dark sclera.
+
+\subsection{Reclusive Hunters}
+Selkies are most at home in the sea. 
+They set up small villages along the coastline to return to after a successful hunt.
+These villages mostly hold the men, as the women spend much of their time hunting.
+More women are born than men, at a rate of about 2:1.
+Their societies are matriarchal, and open relationships are the norm.
+When a child is born, the mother and father raise it until weaning with the support of the clan. 
+Then the father is left to be primary caregiver while the mother hunts.
+The men tend toward crafting.
+
+
+\subsection{Selkie Traits}
+
+\subparagraph{Ability Score Increase}
+Your Dexterity score increases by 2, and your Wisdom score increases by 1.
+
+\subparagraph{Age}
+Selkies live as long as humans do.
+
+\subparagraph{Size}
+In their humanoid form, they are like humans though tend to be shorter and rounder.
+Your size is Medium.
+
+\subparagraph{Speed}
+When in humanoid form, you have a walking speed of 30 feet.
+
+\subparagraph{Low-light Vision}
+Your large eyes give you the ability to see unafflicted in dim light.
+
+\subparagraph{Cold Insensitivity}
+Due to your far Northern origins and a biology adapted to freezing water, you have resistance to cold damage and suffer no ill effects from cold temperatures.
+
+\subparagraph{Languages}
+You can speak Human and Selkie.
+
+\subparagraph{Seal Skin}
+As an action, you can transform into a seal.
+Use the rules for the Druid's \textit{Wild Shape} ability, with the modification that you can stay in seal form indefinitely.
+In your seal form, you can speak a reduced form of Selkie, suitable for simple commands and warnings.
+
+\begin{DndMonster}{Seal}
+    \DndMonsterType{Medium beast, neutral}
+    \DndMonsterBasics[
+        armor-class=12,
+        hit-points=\DndDice{3d8+3},
+        speed={10 ft., swim 60 ft.},
+    ]
+    \DndMonsterAbilityScores[
+        str = 16,
+        dex = 14,
+        con = 13,
+        int = 4,
+        wis = 13,
+        cha = 8,
+    ]
+    \DndMonsterDetails[
+        challenge=1/2,
+        damage-resistances=Cold
+    ]
+
+    \DndMonsterAction{Hold Breath}
+    The seal can hold its breath for 30 minutes.
+
+    \DndMonsterSection{Actions}
+    \DndMonsterAttack[
+        name=Bite,
+        distance=melee,
+        mod=+3,
+        dmg=\DndDice{2d6+3},
+        dmg-type=piercing,
+    ]
+\end{DndMonster}
